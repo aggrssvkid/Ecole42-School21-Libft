@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "libft.h"
+#include "../libft.h"
 
 static void	copy(size_t dstsize, size_t dstlen, char *tmpdst, char *runingman)
 {

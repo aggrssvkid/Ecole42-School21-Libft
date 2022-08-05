@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enoye <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 12:45:43 by enoye             #+#    #+#             */
-/*   Updated: 2021/11/18 12:45:48 by enoye            ###   ########.fr       */
+/*   Created: 2021/10/13 13:49:50 by enoye             #+#    #+#             */
+/*   Updated: 2021/10/13 16:40:08 by enoye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include "../libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+char	*ft_strdup(const char *s1)
 {
-	(*del)(lst -> content);
-	free(lst);
+	char	*duplicate;
+	size_t	len;
+
+	len = ft_strlen(s1);
+	duplicate = malloc((len + 1) * sizeof(char));
+	if (duplicate == 0)
+		return (0);
+	len = ft_strlcpy(duplicate, s1, len + 1);
+	return (duplicate);
 }

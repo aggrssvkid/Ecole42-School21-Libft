@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enoye <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 12:00:48 by enoye             #+#    #+#             */
-/*   Updated: 2021/10/18 13:16:34 by enoye            ###   ########.fr       */
+/*   Created: 2021/11/18 12:20:14 by enoye             #+#    #+#             */
+/*   Updated: 2021/11/19 14:42:53 by enoye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+#include "../libft.h"
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	*runingman;
-	int		x;
+	t_list	*last;
 
-	if (*s == '\0' && c != '\0')
-		return (0);
-	runingman = (char *) s + ft_strlen(s);
-	if (c == '\0')
-		return (runingman);
-	else
-		runingman--;
-	if (c >= 256)
+	if (new == 0 || lst == 0)
+		return ;
+	if (*lst == 0)
 	{
-		x = c / 256;
-		c = c - (256 * x);
+		*lst = new;
+		return ;
 	}
-	while (*runingman != c && runingman != s)
-		runingman--;
-	if (runingman == s && *runingman != c)
-		return (0);
-	return (runingman);
+	last = ft_lstlast(*lst);
+	(last)-> next = new;
 }

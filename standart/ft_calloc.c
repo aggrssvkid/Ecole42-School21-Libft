@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enoye <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 13:49:50 by enoye             #+#    #+#             */
-/*   Updated: 2021/10/13 16:40:08 by enoye            ###   ########.fr       */
+/*   Created: 2021/10/13 12:49:53 by enoye             #+#    #+#             */
+/*   Updated: 2021/10/13 18:08:14 by enoye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <stdlib.h>
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strdup(const char *s1)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char	*duplicate;
-	size_t	len;
+	void	*ptr;
 
-	len = ft_strlen(s1);
-	duplicate = malloc((len + 1) * sizeof(char));
-	if (duplicate == 0)
-		return (0);
-	len = ft_strlcpy(duplicate, s1, len + 1);
-	return (duplicate);
+	if (count == 0 || size == 0)
+		ptr = 0;
+	ptr = malloc(count * size);
+	if (ptr != 0)
+		ptr = ft_bzero(ptr, (count * size));
+	return (ptr);
 }

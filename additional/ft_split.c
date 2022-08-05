@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "../libft.h"
 
 static void	zapolnenie(char *runman, char **stringsarr, char c)
 {

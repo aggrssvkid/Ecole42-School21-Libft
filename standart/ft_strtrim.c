@@ -12,17 +12,16 @@
 
 #include <stdlib.h>
 #include <stddef.h>
-#include "libft.h"
+#include "../libft.h"
 
 static char	*ft_lenstrdup(const char *s1, size_t len)
 {
 	char	*duplicate;
-	size_t	x;
 
 	duplicate = malloc((len + 1) * sizeof(char));
 	if (duplicate == 0)
 		return (0);
-	x = ft_strlcpy(duplicate, s1, len + 1);
+	ft_strlcpy(duplicate, s1, len + 1);
 	return (duplicate);
 }
 

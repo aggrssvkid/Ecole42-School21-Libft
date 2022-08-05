@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enoye <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 14:07:40 by enoye             #+#    #+#             */
-/*   Updated: 2021/11/18 14:07:43 by enoye            ###   ########.fr       */
+/*   Created: 2021/10/07 15:11:56 by enoye             #+#    #+#             */
+/*   Updated: 2021/10/07 15:15:02 by enoye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int	ft_isalnum(int a)
 {
-	while (lst != 0)
-	{
-		(*f)(lst -> content);
-		lst = lst -> next;
-	}
+	if ((ft_isdigit(a) != 0) || (ft_isalpha(a) != 0))
+		return (1);
+	return (0);
 }

@@ -13,7 +13,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "libft.h"
+#include "../libft.h"
 
 static char	*zapolnyaem(char *string, int len, int n)
 {

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "../libft.h"
 
 static char	*copys1(char *runman, char *runjoin)
 {

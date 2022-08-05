@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enoye <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 14:21:13 by enoye             #+#    #+#             */
-/*   Updated: 2021/11/19 14:43:18 by enoye            ###   ########.fr       */
+/*   Created: 2021/10/18 19:59:11 by enoye             #+#    #+#             */
+/*   Updated: 2021/10/18 21:10:02 by enoye            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*begin;
-
-	begin = (t_list *) malloc (sizeof (t_list));
-	if (begin == 0)
+	if (lst == 0)
 		return (0);
-	begin -> content = content;
-	begin -> next = 0;
-	return (begin);
+	while (lst -> next != 0)
+		lst = lst -> next;
+	return (lst);
 }
